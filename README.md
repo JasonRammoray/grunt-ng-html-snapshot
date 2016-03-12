@@ -99,6 +99,13 @@ grunt.initConfig({
              */
 
             baseUrl: 'http://localhost:8080',
+            
+            /*
+             * Overriding default path to phantom.js job.
+             * Note: path is relative to Gruntfile.js
+             * /
+            
+            jobPath: './some-folder/some-custom-phantom-job.js',
 
             output: {
               // Output directory. In case if doesn't exists phantom creates it.
