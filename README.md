@@ -103,7 +103,7 @@ grunt.initConfig({
             /*
              * Overriding default path to phantom.js job.
              * Note: path is relative to Gruntfile.js
-             * /
+             */
             
             jobPath: './some-folder/some-custom-phantom-job.js',
 
