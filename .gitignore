@@ -1,0 +1,14 @@
+# Node modules folder
+node_modules
+
+# Npm log with debug info
+npm-debug.log
+
+# Tests execution results
+tmp
+
+# Tests execution reports
+test/report
+
+# Folder which can be created in case if task's target overrides parent output params without specifying output dir
+undefined
