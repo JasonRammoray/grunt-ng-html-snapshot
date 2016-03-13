@@ -142,7 +142,7 @@
 
             var http = angular.element(appDomElement).injector().get('$http');
 
-            return http.pendingRequests.length ? false : document.documentElement.innerHTML;
+            return http.pendingRequests.length ? false : document.documentElement.outerHTML;
           } catch( err ) {
             return false;
           }

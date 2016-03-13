@@ -1,7 +1,7 @@
 {
   "name": "grunt-ng-html-snapshot",
   "description": "A simple phantom.js based snapshots creator for single page applications written in Angular 1.x",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "homepage": "https://github.com/jasonrammoray/grunt-ng-html-snapshot",
   "author": {
     "name": "JasonRammoray",
