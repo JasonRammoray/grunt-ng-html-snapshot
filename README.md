@@ -3,6 +3,7 @@
 > A simple phantom.js based snapshots creator for single page applications written in Angular 1.x.
 *DO NOT* use it for regular website (whose front-end works not in Angular 1.x) with default phantom.js job.
 In case if you *DO* want to use it for regular website you have to set path to phantom.js job (see details bellow).
+This plugin will successfully create a page snapshot if it has automatically bootstrapped module (marked with either ng-app, or data-ng-app, or x-ng-app, or ng_app attribute).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.5`
