@@ -128,10 +128,19 @@
         utils.log.add('Checking if page "' + websitePageUrl + '" is loaded.');
 
         var documentHtml = pageObj.evaluate(function() {
-          // Keep in mind, that angular might not be loaded at the moment
+          /*
+           * Keep in mind, that angular might either not be loaded at the moment or
+           * it's api might be changed dramatically in the future.
+           * Note: check for page loading status works only if you have automatically
+           * bootstrapped application on the page (either via ng-app, or data-ng-app,
+           * or x-ng-app, or ng_app).
+           * Hence wrap code block with try / catch
+           */
 
           try {
-            var http = angular.injector(['ng']).get('$http');
+            var appDomElement = document.querySelector('[ng-app], [data-ng-app], [x-ng-app], [ng_app]');
+
+            var http = angular.element(appDomElement).injector().get('$http');
 
             return http.pendingRequests.length ? false : document.documentElement.innerHTML;
           } catch( err ) {
