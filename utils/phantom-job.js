@@ -149,6 +149,12 @@
         });
 
         if( !!documentHtml ) {
+          if( jobParams.options.removeMetaFragment ) {
+            // todo: cover with unit tests (two examples: removed meta and not removed meta)
+
+            documentHtml = documentHtml.replace(/<\s*?meta\s*?name=\"fragment\"\s*?content=\"\!\"\s*?\/?>/gi, '');
+          }
+
           pageHtml += documentHtml;
 
           utils.log.add('Page "' + websitePageUrl + '" is loaded, writing output to file: ' + websitePageOutputFile);
