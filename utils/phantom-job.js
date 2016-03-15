@@ -149,9 +149,7 @@
         });
 
         if( !!documentHtml ) {
-          if( jobParams.options.removeMetaFragment ) {
-            // todo: cover with unit tests (two examples: removed meta and not removed meta)
-
+          if( jobParams.removeMetaFragment ) {
             documentHtml = documentHtml.replace(/<\s*?meta\s*?name=\"fragment\"\s*?content=\"\!\"\s*?\/?>/gi, '');
           }
 

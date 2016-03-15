@@ -75,6 +75,13 @@ Default: 100
 
 If page wasn't successfully loaded during first attempt, then timeout is used as an interval before executing next attempt.
 
+### options.removeMetaFragment
+Type: `Boolean`
+Default: true
+
+Set this flag to false if you don't need to remove <meta name="fragment" content="!" /> from a page snapshot.
+This might be necessary for some search engines. For example, this tag should be removed from a page so that it can be indexed by Yandex bot. [See details here] (https://yandex.com/support/webmaster/robot-workings/ajax-indexing.xml)
+
 ### options.pageDocType
 Type: `String`
 Default: '<!doctype html>'
@@ -120,11 +127,18 @@ grunt.initConfig({
               logFile: 'job-log.txt'
             },
 
-            // Page loading timeout in ms. Default value - 100 ms.
-
             pageLoadingTimeout: 100,
 
             pageDocType: '<!doctype html>',
+            
+            /*
+             * Overriding default parameter, hence
+             * <meta name="fragment" content="!" />
+             * will not be removed from snapshot (s) if
+             * it was presented in the original page (s). 
+             */
+            
+            removeMetaFragment: false,
 
             pages: [
               {
