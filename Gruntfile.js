@@ -69,6 +69,32 @@ module.exports = function(grunt) {
             dir: './tmp'
           }
         }
+      },
+
+      withRemovingMetaFragment: {
+        options: {
+          output: {
+            snapshotFileExt: 'html',
+
+            logFile: false,
+
+            dir: './tmp'
+          }
+        }
+      },
+
+      withoutRemovingMetaFragment: {
+        options: {
+          removeMetaFragment: false,
+
+          output: {
+            snapshotFileExt: 'html',
+
+            logFile: false,
+
+            dir: './tmp'
+          }
+        }
       }
     },
 
@@ -93,6 +119,14 @@ module.exports = function(grunt) {
 
       withoutFileExtAndWithoutLog: {
         src: ['test/specs/test-for-files-without-ext-and-without-log-specs.js']
+      },
+
+      withRemovingMetaFragment: {
+        src: ['test/specs/test-for-files-with-removing-meta-fragment-spec.js']
+      },
+
+      withoutRemovingMetaFragment: {
+        src: ['test/specs/test-for-files-without-removing-meta-fragment-spec.js']
       }
     }
   });
@@ -117,6 +151,22 @@ module.exports = function(grunt) {
     'ng_html_snapshot:withoutExtAndWithoutLog',
 
     'nodeunit:withoutFileExtAndWithoutLog'
+  ]);
+
+  grunt.registerTask('testFilesWithRemovingMetaFragment', [
+    'clean',
+
+    'ng_html_snapshot:withRemovingMetaFragment',
+
+    'nodeunit:withRemovingMetaFragment'
+  ]);
+
+  grunt.registerTask('testFilesWithoutRemovingMetaFragment', [
+    'clean',
+
+    'ng_html_snapshot:withoutRemovingMetaFragment',
+
+    'nodeunit:withoutRemovingMetaFragment'
   ]);
 
   grunt.registerTask('test', [

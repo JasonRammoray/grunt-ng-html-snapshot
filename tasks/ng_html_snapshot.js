@@ -24,6 +24,8 @@ module.exports = function(grunt) {
 
     options.jobPath = options.jobPath || './node_modules/grunt-ng-html-snapshot/utils/phantom-job.js';
 
+    options.removeMetaFragment =  options.removeMetaFragment === undefined ? true : !!options.removeMetaFragment;
+
     childProcess.execFileSync(
       phantom.path,
 
