@@ -104,7 +104,7 @@
     var websitePage = websitePages.shift();
 
     var pageObj = WebPage.create();
-    
+
     var websitePageUrl = jobParams.baseUrl + websitePage.path;
 
     var websitePageOutputFile = jobParams.output.dir +
@@ -116,6 +116,8 @@
       (!!jobParams.output.snapshotFileExt ? '.' + jobParams.output.snapshotFileExt : '');
 
     pageObj.onLoadFinished = function() {
+	    utils.log.add('Page ' + websitePageUrl + ' load is finished');
+
       var pageHtml = jobParams.pageDocType;
 
       /**
