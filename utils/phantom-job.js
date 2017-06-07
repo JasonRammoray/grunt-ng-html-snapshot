@@ -118,6 +118,12 @@
       (!!jobParams.output.snapshotFileExt ? '.' + jobParams.output.snapshotFileExt : '');
 
     pageObj.onLoadFinished = function (status) {
+      /*
+       * Prevent page handler from firing twice.
+       * See details (https://groups.google.com/forum/#!topic/phantomjs/juAOicAkrZE)
+       * for more info why this might happen
+       */
+
       if (pageLoadHandlerFired) {
         return;
       }
