@@ -168,4 +168,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality.
 
 ## Release History
+0.1.4 - bug fixes.
+0.1.3 - Fix for gathering documentHtml in the default phantom.js job
+0.1.2 - bug fixes. Improved method for checking page loading status.
 0.1.0 - first version. No threshold for checks for page loading status. The process will be killed by timeout after 5 minutes.
